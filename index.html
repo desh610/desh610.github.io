@@ -86,6 +86,12 @@
   .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
   .hero-figure{position:relative}
   .hero-figure img{width:100%;border-radius:26px;box-shadow:var(--shadow)}
+  .hero-logo{display:grid;place-items:center;padding:10px}
+  .hero-logo::before{content:"";position:absolute;width:74%;aspect-ratio:1;border-radius:50%;
+    background:var(--grad);filter:blur(58px);opacity:.30;z-index:0}
+  .hero-logo img{position:relative;z-index:1;width:min(430px,82%);border-radius:50%;box-shadow:0 30px 70px rgba(123,47,247,.28);
+    animation:float 6s ease-in-out infinite}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
   .badges{display:flex;gap:26px;flex-wrap:wrap;margin-top:34px}
   .badges div{display:flex;flex-direction:column}
   .badges b{font-size:26px;font-weight:900;color:var(--ink)}
@@ -113,16 +119,21 @@
   /* ---------- Games ---------- */
   .games-grid{grid-template-columns:repeat(4,1fr)}
   .game{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
-    text-align:center;transition:transform .2s ease,box-shadow .2s ease}
+    text-align:center;display:flex;flex-direction:column;transition:transform .2s ease,box-shadow .2s ease}
   .game:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
-  .game .top{padding:26px 20px 18px;background:linear-gradient(135deg,rgba(123,47,247,.10),rgba(247,37,133,.08))}
-  .game .emoji{font-size:44px;line-height:1}
-  .game .body{padding:18px 20px 24px}
+  .game .top{padding:28px 20px 22px;display:flex;justify-content:center;
+    background:linear-gradient(135deg,rgba(123,47,247,.10),rgba(247,37,133,.08))}
+  .game-ic{width:64px;height:64px;border-radius:18px;display:grid;place-items:center;
+    background:var(--grad);box-shadow:0 12px 26px rgba(123,47,247,.30)}
+  .game-ic svg{width:32px;height:32px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .game .body{padding:20px 20px 24px;display:flex;flex-direction:column;flex:1;align-items:center}
   .game h3{font-size:18px;margin-bottom:4px}
+  .game .desc{font-size:14px;color:var(--muted);margin:0 0 14px;min-height:40px}
   .tag{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
     color:var(--p2);background:rgba(247,37,133,.10);padding:4px 12px;border-radius:50px;margin-bottom:12px}
   .play{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:700;color:var(--ink);
-    border:1.5px solid var(--line);padding:8px 16px;border-radius:50px;margin-top:6px}
+    border:1.5px solid var(--line);padding:8px 16px;border-radius:50px;margin-top:auto}
+  .play svg{width:15px;height:15px;fill:currentColor}
   .play:hover{border-color:var(--p1);color:var(--p1)}
 
   /* ---------- Why us ---------- */
@@ -131,11 +142,13 @@
   .why .ic{flex:0 0 auto;margin:0}
 
   /* ---------- About ---------- */
-  .about-inner{display:grid;grid-template-columns:.8fr 1.2fr;gap:52px;align-items:center}
-  .about-photo{position:relative;justify-self:center}
-  .about-photo img{width:290px;border-radius:24px;background:linear-gradient(135deg,var(--p1),var(--p3));
-    box-shadow:var(--shadow)}
-  .about-photo .ring{position:absolute;inset:-14px;border-radius:30px;background:var(--grad);z-index:-1;opacity:.25;filter:blur(6px)}
+  .about-inner{display:grid;grid-template-columns:.9fr 1.1fr;gap:52px;align-items:center}
+  .about-visual{justify-self:center;width:100%;max-width:420px}
+  .av-card{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--grad);border-radius:24px;overflow:hidden;
+    box-shadow:0 24px 60px rgba(123,47,247,.30)}
+  .av-item{background:rgba(255,255,255,.06);backdrop-filter:blur(2px);padding:34px 20px;text-align:center;color:#fff}
+  .av-item b{display:block;font-size:38px;font-weight:900;line-height:1}
+  .av-item span{font-size:13px;font-weight:600;opacity:.92}
   .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
   .chip{font-size:13px;font-weight:600;color:var(--ink);background:var(--bg-soft);border:1px solid var(--line);
     padding:7px 15px;border-radius:50px}
@@ -230,8 +243,8 @@
         <div><b>100%</b><span>Client Focused</span></div>
       </div>
     </div>
-    <div class="hero-figure reveal">
-      <img src="assets/img/banner.webp" alt="RD Projects — we build digital solutions that drive growth" loading="eager" />
+    <div class="hero-figure hero-logo reveal">
+      <img src="assets/img/logo.webp" alt="RD Projects — Software Developments" loading="eager" />
     </div>
   </div>
 </section>
@@ -289,24 +302,24 @@
     </div>
     <div class="grid games-grid">
       <div class="game reveal">
-        <div class="top"><div class="emoji">🧪</div></div>
-        <div class="body"><span class="tag">Puzzle</span><h3>Magic Sort</h3><p style="font-size:14px;color:var(--muted);margin:0 0 6px">Relaxing color water-sort puzzle.</p>
-          <a class="play" href="https://play.google.com/store/apps/details?id=com.rdprojects.magicsort" target="_blank" rel="noopener">▶ Google Play</a></div>
+        <div class="top"><div class="game-ic"><svg viewBox="0 0 24 24"><path d="M9 3h6v3a2 2 0 0 0 4 0h0v4a2 2 0 0 1 0 4v4H9v-3a2 2 0 0 0-4 0v3H3v-4a2 2 0 0 0 0-4V6a2 2 0 0 0 4 0z"/></svg></div></div>
+        <div class="body"><span class="tag">Puzzle</span><h3>Magic Sort</h3><p class="desc">Relaxing color water-sort puzzle.</p>
+          <a class="play" href="https://play.google.com/store/apps/details?id=com.rdprojects.magicsort" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M4 3l16 9-16 9z"/></svg>Google Play</a></div>
       </div>
       <div class="game reveal">
-        <div class="top"><div class="emoji">🎯</div></div>
-        <div class="body"><span class="tag">Board</span><h3>Carrom Pool</h3><p style="font-size:14px;color:var(--muted);margin:0 0 6px">Classic carrom, aim &amp; strike.</p>
-          <a class="play" href="https://play.google.com/store/apps/details?id=com.rdprojects.carrompool" target="_blank" rel="noopener">▶ Google Play</a></div>
+        <div class="top"><div class="game-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="#fff" stroke="none"/></svg></div></div>
+        <div class="body"><span class="tag">Board</span><h3>Carrom Pool</h3><p class="desc">Classic carrom board — aim &amp; strike.</p>
+          <a class="play" href="https://play.google.com/store/apps/details?id=com.rdprojects.carrompool" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M4 3l16 9-16 9z"/></svg>Google Play</a></div>
       </div>
       <div class="game reveal">
-        <div class="top"><div class="emoji">⚫</div></div>
-        <div class="body"><span class="tag">Board</span><h3>Checkers Pool</h3><p style="font-size:14px;color:var(--muted);margin:0 0 6px">Strategy, skill &amp; friendship.</p>
-          <a class="play" href="https://play.google.com/store/apps/details?id=com.rdprojects.checkerspool" target="_blank" rel="noopener">▶ Google Play</a></div>
+        <div class="top"><div class="game-ic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></div></div>
+        <div class="body"><span class="tag">Board</span><h3>Checkers Pool</h3><p class="desc">Strategy, skill &amp; friendship.</p>
+          <a class="play" href="https://play.google.com/store/apps/details?id=com.rdprojects.checkerspool" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M4 3l16 9-16 9z"/></svg>Google Play</a></div>
       </div>
       <div class="game reveal">
-        <div class="top"><div class="emoji">🎱</div></div>
-        <div class="body"><span class="tag">Arcade</span><h3>8 Ball Pool</h3><p style="font-size:14px;color:var(--muted);margin:0 0 6px">Aim, strategize and win.</p>
-          <a class="play" href="https://play.google.com/store/apps/details?id=com.rdprojects.eightballpool" target="_blank" rel="noopener">▶ Google Play</a></div>
+        <div class="top"><div class="game-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.6" fill="#fff" stroke="none"/><circle cx="12" cy="12" r="2.2" fill="#7B2FF7" stroke="none"/></svg></div></div>
+        <div class="body"><span class="tag">Arcade</span><h3>8 Ball Pool</h3><p class="desc">Aim, strategize and win.</p>
+          <a class="play" href="https://play.google.com/store/apps/details?id=com.rdprojects.eightballpool" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M4 3l16 9-16 9z"/></svg>Google Play</a></div>
       </div>
     </div>
     <p style="text-align:center;margin-top:34px;color:var(--muted);font-weight:600">More games in the works — simple gameplay, enjoyable experiences and regular improvements.</p>
@@ -341,9 +354,13 @@
 <!-- ======= ABOUT ======= -->
 <section id="about" class="soft">
   <div class="wrap about-inner">
-    <div class="about-photo reveal">
-      <div class="ring"></div>
-      <img src="assets/img/founder.webp" alt="Founder of RD Projects" loading="lazy" />
+    <div class="about-visual reveal">
+      <div class="av-card">
+        <div class="av-item"><b>4+</b><span>Games Published</span></div>
+        <div class="av-item"><b>7</b><span>Service Areas</span></div>
+        <div class="av-item"><b>100%</b><span>Client Focused</span></div>
+        <div class="av-item"><b>24/7</b><span>Dedication</span></div>
+      </div>
     </div>
     <div class="reveal">
       <span class="eyebrow">About Us</span>
@@ -370,7 +387,6 @@
       <p>Have a project in mind or a question about our games? We'd love to hear from you. We turn your ideas into reality.</p>
       <div class="contact-actions">
         <a class="btn btn-white" href="mailto:rdprojects24@gmail.com">✉ rdprojects24@gmail.com</a>
-        <a class="btn btn-outline-white" href="https://github.com/desh610" target="_blank" rel="noopener">GitHub</a>
       </div>
     </div>
   </div>
@@ -397,8 +413,7 @@
         <h4>Connect</h4>
         <ul>
           <li><a href="mailto:rdprojects24@gmail.com">rdprojects24@gmail.com</a></li>
-          <li><a href="https://github.com/desh610" target="_blank" rel="noopener">github.com/desh610</a></li>
-          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
         </ul>
       </div>
     </div>
