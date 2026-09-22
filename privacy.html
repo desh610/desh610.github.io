@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Privacy Policy — RD Projects</title>
+<meta name="description" content="Privacy Policy for RD Projects apps and games." />
+<meta name="theme-color" content="#7B2FF7" />
+<link rel="icon" type="image/webp" href="assets/img/logo.webp" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+  :root{--p1:#7B2FF7;--p2:#F72585;--p3:#FF7A18;--grad:linear-gradient(135deg,var(--p1),var(--p2),var(--p3));
+    --ink:#161326;--body:#4b475e;--line:#ececf4;--bg:#fff;--soft:#f6f4fb}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:'Poppins',system-ui,Arial,sans-serif;color:var(--body);background:var(--bg);line-height:1.7}
+  a{color:var(--p1);text-decoration:none}a:hover{text-decoration:underline}
+  .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .top{background:var(--soft);border-bottom:1px solid var(--line)}
+  .top-in{max-width:900px;margin:0 auto;padding:20px 22px;display:flex;align-items:center;justify-content:space-between}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:800;color:var(--ink);font-size:18px}
+  .brand img{width:40px;height:40px;border-radius:50%}
+  .wrap{max-width:900px;margin:0 auto;padding:52px 22px 80px}
+  h1{color:var(--ink);font-size:clamp(30px,4vw,42px);font-weight:900;margin:0 0 6px}
+  .updated{color:#8f8aa8;font-size:14px;margin-bottom:34px}
+  h2{color:var(--ink);font-size:21px;font-weight:800;margin:34px 0 10px}
+  p,li{font-size:15.5px}
+  ul{padding-left:20px}
+  .card{background:var(--soft);border:1px solid var(--line);border-radius:16px;padding:20px 24px;margin-top:14px}
+  footer{border-top:1px solid var(--line);padding:24px 22px;text-align:center;color:#8f8aa8;font-size:13.5px}
+</style>
+</head>
+<body>
+<div class="top"><div class="top-in">
+  <a class="brand" href="index.html"><img src="assets/img/logo.webp" alt="RD Projects" /> RD&nbsp;Projects</a>
+  <a href="index.html">&larr; Back to Home</a>
+</div></div>
+
+<div class="wrap">
+  <h1>Privacy <span class="grad-text">Policy</span></h1>
+  <p class="updated">Last updated: <span id="d"></span></p>
+
+  <p>This Privacy Policy explains how <b>RD Projects</b> ("we", "us", "our") handles information in connection with our mobile applications and games (the "Apps") published on Google Play. We are committed to protecting your privacy and being transparent about our practices.</p>
+
+  <h2>1. Information We Collect</h2>
+  <p>Our games are designed to be enjoyed without creating an account, and we do <b>not</b> ask you for personal information such as your name, email address or phone number. Game progress (levels, coins, settings) is stored locally on your device.</p>
+  <p>Our Apps use third-party services that may collect information used to identify you, primarily to serve ads and keep the Apps running:</p>
+  <ul>
+    <li><b>Advertising identifiers</b> and related data (e.g. Google Advertising ID), used by our ad partner to show relevant ads.</li>
+    <li><b>Device &amp; usage information</b> such as device model, operating system version, general (non-precise) location derived from IP, and app interaction data.</li>
+  </ul>
+
+  <h2>2. Ads &amp; Third-Party Services</h2>
+  <p>We use <b>Google AdMob</b> to display advertisements and <b>Google Play Services</b> for core app functionality. These services have their own privacy policies:</p>
+  <div class="card">
+    <ul style="margin:0">
+      <li>Google Privacy Policy — <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></li>
+      <li>How Google uses information — <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">policies.google.com/technologies/partner-sites</a></li>
+      <li>AdMob — <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">AdMob &amp; privacy</a></li>
+    </ul>
+  </div>
+
+  <h2>3. How Information Is Used</h2>
+  <ul>
+    <li>To display and measure advertisements.</li>
+    <li>To operate, maintain and improve the Apps.</li>
+    <li>To diagnose crashes and technical issues.</li>
+  </ul>
+
+  <h2>4. In-App Purchases</h2>
+  <p>Some Apps offer optional in-app purchases (e.g. removing ads or buying coins) processed securely by Google Play Billing. We do not receive or store your payment card details.</p>
+
+  <h2>5. Children's Privacy</h2>
+  <p>Our Apps are intended for a general audience. We do not knowingly collect personal information from children. If you believe a child has provided us information, please contact us and we will remove it.</p>
+
+  <h2>6. Data Retention &amp; Your Choices</h2>
+  <p>Locally-stored game data remains on your device until you clear the app data or uninstall the App. You can reset your Advertising ID or opt out of ad personalization in your device settings under Google &rarr; Ads.</p>
+
+  <h2>7. Changes to This Policy</h2>
+  <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated date.</p>
+
+  <h2>8. Contact Us</h2>
+  <p>If you have any questions about this Privacy Policy, contact us at <a href="mailto:rdprojects24@gmail.com">rdprojects24@gmail.com</a>.</p>
+</div>
+
+<footer>© <span id="y"></span> RD Projects. All rights reserved.</footer>
+<script>
+  var now=new Date();
+  document.getElementById('d').textContent=now.toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  document.getElementById('y').textContent=now.getFullYear();
+</script>
+</body>
+</html>
